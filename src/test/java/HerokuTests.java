@@ -77,14 +77,6 @@ public class HerokuTests {
         WebElement successfulLoginMessageLabel = driver.findElement(By .id("example-modal-sizes-title-lg"));
         String successfulLoginMessage = successfulLoginMessageLabel.getText();
 
-
-
-
-
-
-
-
-
         Thread.sleep(3000);
         Assertions.assertTrue(successfulLoginMessageLabel.isDisplayed());
         Assertions.assertTrue(successfulLoginMessage.contains("Thanks for submitting the form"));
