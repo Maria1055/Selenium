@@ -1,0 +1,195 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 100663296 bytes for Failed to commit area from 0x00000000a1e00000 to 0x00000000a7e00000 of length 100663296.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3273), pid=11444, tid=12952
+#
+# JRE version:  (11.0.11+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.11+9-LTS-194, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dbrowser=chrome -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar=55369:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin -Dfile.encoding=UTF-8 com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 HerokuTests,authenticationTest
+
+Host: Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz, 4 cores, 5G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1348)
+Time: Tue Mar 22 13:46:26 2022 Новосибирское стандартное время elapsed time: 0.039185 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000022fceb20800):  JavaThread "Unknown thread" [_thread_in_vm, id=12952, stack(0x000000bb44c00000,0x000000bb44d00000)]
+
+Stack: [0x000000bb44c00000,0x000000bb44d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x616f2a]
+V  [jvm.dll+0x74de7f]
+V  [jvm.dll+0x74f505]
+V  [jvm.dll+0x74fb83]
+V  [jvm.dll+0x2436d8]
+V  [jvm.dll+0x61431a]
+V  [jvm.dll+0x6090f5]
+V  [jvm.dll+0x2f7eec]
+V  [jvm.dll+0x2f7d72]
+V  [jvm.dll+0x2fca26]
+V  [jvm.dll+0x33efef]
+V  [jvm.dll+0x33ea20]
+V  [jvm.dll+0x2d5608]
+V  [jvm.dll+0x2d6766]
+V  [jvm.dll+0x7299e7]
+V  [jvm.dll+0x72b28f]
+V  [jvm.dll+0x34bd39]
+V  [jvm.dll+0x70f360]
+V  [jvm.dll+0x3b50df]
+V  [jvm.dll+0x3b71e1]
+C  [jli.dll+0x520b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000022fcc9f4e60, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000022fceb37000 GCTaskThread "GC Thread#0" [stack: 0x000000bb44d00000,0x000000bb44e00000] [id=12344]
+  0x0000022fceb5c800 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000bb44e00000,0x000000bb44f00000] [id=11392]
+  0x0000022fceb61000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000bb44f00000,0x000000bb45000000] [id=2760]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffd9344857]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000022fceb1c9f0] Heap_lock - owner thread: 0x0000022fceb20800
+
+Heap address: 0x00000000a1e00000, size: 1506 MB, Compressed Oops mode: Non-zero based: 0x00000000a1e00000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff610980000 - 0x00007ff61098f000 	C:\Program Files\Java\jdk-11.0.11\bin\java.exe
+0x00007ff814db0000 - 0x00007ff814fa5000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffff8290000 - 0x00007ffff82a6000 	C:\Program Files\Avast Software\Avast\aswhook.dll
+0x00007ff812f00000 - 0x00007ff812fbe000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff812930000 - 0x00007ff812bf8000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff812720000 - 0x00007ff812820000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff8089a0000 - 0x00007ff8089b5000 	C:\Program Files\Java\jdk-11.0.11\bin\VCRUNTIME140.dll
+0x00007ff808a80000 - 0x00007ff808a98000 	C:\Program Files\Java\jdk-11.0.11\bin\jli.dll
+0x00007ff8147a0000 - 0x00007ff81484c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff814220000 - 0x00007ff8142be000 	C:\Windows\System32\msvcrt.dll
+0x00007ff814300000 - 0x00007ff81439b000 	C:\Windows\System32\sechost.dll
+0x00007ff813730000 - 0x00007ff81385a000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff814bc0000 - 0x00007ff814d61000 	C:\Windows\System32\USER32.dll
+0x00007ff8124d0000 - 0x00007ff8124f2000 	C:\Windows\System32\win32u.dll
+0x00007ff802a00000 - 0x00007ff802c9a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff8142d0000 - 0x00007ff8142fb000 	C:\Windows\System32\GDI32.dll
+0x00007ff812820000 - 0x00007ff81292b000 	C:\Windows\System32\gdi32full.dll
+0x00007ff812d60000 - 0x00007ff812dfd000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff80ac10000 - 0x00007ff80ac1a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff813ab0000 - 0x00007ff813ae0000 	C:\Windows\System32\IMM32.DLL
+0x00007ff801d30000 - 0x00007ff801dcb000 	C:\Program Files\Java\jdk-11.0.11\bin\msvcp140.dll
+0x00007fffd9060000 - 0x00007fffd9b5e000 	C:\Program Files\Java\jdk-11.0.11\bin\server\jvm.dll
+0x00007ff812e20000 - 0x00007ff812e28000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff801bf0000 - 0x00007ff801bf9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff813580000 - 0x00007ff8135eb000 	C:\Windows\System32\WS2_32.dll
+0x00007ff804670000 - 0x00007ff804697000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff8103d0000 - 0x00007ff8103e2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ff80c4c0000 - 0x00007ff80c4d0000 	C:\Program Files\Java\jdk-11.0.11\bin\verify.dll
+0x00007ff8080b0000 - 0x00007ff808294000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff8074d0000 - 0x00007ff8074fc000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff812580000 - 0x00007ff812603000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff801f10000 - 0x00007ff801f38000 	C:\Program Files\Java\jdk-11.0.11\bin\java.dll
+0x00007ff808440000 - 0x00007ff80844a000 	C:\Program Files\Java\jdk-11.0.11\bin\jimage.dll
+0x00007ff808430000 - 0x00007ff80843e000 	C:\Program Files\Java\jdk-11.0.11\bin\instrument.dll
+0x00007ff801ef0000 - 0x00007ff801f06000 	C:\Program Files\Java\jdk-11.0.11\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.11\bin;C:\Windows\SYSTEM32;C:\Program Files\Avast Software\Avast;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-11.0.11\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dbrowser=chrome -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar=55369:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 HerokuTests,authenticationTest
+java_class_path (initial): C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-launcher\1.7.1\junit-platform-launcher-1.7.1.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-engine\1.7.1\junit-platform-engine-1.7.1.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.1\junit-jupiter-engine-5.7.1.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\plugins\junit\lib\junit-rt.jar;C:\Users\Admin\IdeaProjects\Selenium\target\test-classes;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Admin\.m2\repository\org\apache\commons\commons-exec
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 100663296                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1579155456                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.11
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;%GRADLE_HOME%\bin;%JAVA_HOME%\bin;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps
+USERNAME=Admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1348)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9 microcode 0x21, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, system-wide physical 6023M (1033M free)
+TotalPageFile size 6023M (AvailPageFile size 79M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 147M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.11+9-LTS-194) for windows-amd64 JRE (11.0.11+9-LTS-194), built on Mar 18 2021 18:46:53 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.
